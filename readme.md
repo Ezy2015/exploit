@@ -1,3 +1,4 @@
+
 ### Disclaimer
 
 ```
@@ -167,7 +168,8 @@ c)重新运行python3 web.py
 
 ```
 Q0:config.ini 这个文件怎么没有找到?
-A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bing API key,发邮件的帐号,数据库连接配置，扫描模式等信息，一般会在/usr/local/lib/python3.5/dist-packages/config.ini这里,与python3的安装路径有关
+A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bing API key,发邮件的帐号,数据库连接配置,扫描模式
+   等信息,一般会在/usr/local/lib/python3.5/dist-packages/config.ini这里,与python3的安装路径有关
 ```
 
 ### Todo
