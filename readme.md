@@ -176,6 +176,7 @@ A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bin
 
 ```
 1.webshell爆破速度提升1000倍(接地气思路,unfinished)
+2.增加端口扫描模块
 ```
 
 ### Changelog
