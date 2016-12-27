@@ -8,7 +8,7 @@
 ### function: exp10itScanner
 ### date: 2016-11-07
 ### author: quanyechavshuo
-### blog: https://3xp10it.cc
+### blog: http://3xp10it.cc
 #############################################################
 import os
 import time
