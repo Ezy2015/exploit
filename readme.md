@@ -16,8 +16,9 @@ git clone https://github.com/3xp10it/3xp10it.git
 ### Usage
 
 ```
-python3 3xp10it.py
-[python3 web.py],可选,如果运行则要新开一个终端运行以便于查看相关输出信息
+bash beforeWork.sh[这一步安装相关依赖,第一次使用本工具时需要运行,以后不用再运行]
+python3 3xp10it.py[主程序,工作时运行,第一次运行时需要先运行上面的beforeWork.sh]
+python3 web.py[可选,如果运行则要新开一个终端运行以便于查看相关输出信息,该工具为web后台]
 ```
 
 ### Requirement
@@ -177,7 +178,8 @@ A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bin
 ```
 1.webshell爆破速度提升1000倍(接地气思路,unfinished)
 2.增加端口扫描模块(unfinished)
-3.在扫描前检测目标有没有cdn,如果有尝试获取真实ip再扫描,如果没有成功获取到真实ip则将扫描策略改为只扫描目标和目标的子站(如果该目标在开始设置的scan_way!=2)(unfinished)
+3.在扫描前检测目标有没有cdn,如果有尝试获取真实ip再扫描,如果没有成功获取到真实ip则将扫描策略改为只扫描目标和目
+  标的子站(如果该目标在开始设置的scan_way!=2)(unfinished)
 ```
 
 ### Changelog
