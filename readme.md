@@ -179,8 +179,6 @@ A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bin
 ```
 1.webshell爆破速度提升1000倍(接地气思路,unfinished)
 2.增加端口扫描模块(unfinished)
-3.在扫描前检测目标有没有cdn,如果有尝试获取真实ip再扫描,如果没有成功获取到真实ip则将扫描策略改为只扫描目标和目
-  标的子站(如果该目标在开始设置的scan_way!=2)(unfinished)
 ```
 
 ### Changelog
