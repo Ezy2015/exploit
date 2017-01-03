@@ -64,7 +64,7 @@ b)支持功能列表
 - robots/sitemap自动收集
 - cms识别与cms漏洞扫描模块
 - 自动识别管理员页面并爆破[支持自动识别简单验证码]
-- webshell自动查找与爆破,支持asp,php,aspx,jsp
+- webshell自动查找与爆破,支持asp,php,aspx,jsp,支持chopper一句话webshell和大马类型webshell
 - whois信息收集
 - 资源文件收集
 - 自动尝试获取cdn后的真实Ip
