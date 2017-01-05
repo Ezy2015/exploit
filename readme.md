@@ -65,6 +65,12 @@ b)支持功能列表
 - cms识别与cms漏洞扫描模块
 - 自动识别管理员页面并爆破[支持自动识别简单验证码]
 - webshell自动查找与爆破,支持asp,php,aspx,jsp,支持chopper一句话webshell和大马类型webshell
+	a)apache,iis,nginx,lighttpd在phpstudy中测试默认可接收1000个post参数
+	b)一句话类型webshell根据上面的特点可以正常情况下(单线程)的1000倍速度来爆破,可用大字典爆破,但是不能用多线程,
+      可能是因为用多线程会太快而让web server觉得每次的参数不止1000个
+    c)其他类型web server未测试暂用多线程1倍速爆破,用最常用的webshell较小字典,17659个左右
+    d)大马类型webshell由于表单名是一定的,所以不能以1000倍速爆破,于是也用和c)中一样的小字典多线程1倍速爆破
+
 - whois信息收集
 - 资源文件收集
 - 自动尝试获取cdn后的真实Ip
@@ -177,8 +183,7 @@ A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bin
 ### Todo
 
 ```
-1.webshell爆破速度提升1000倍(接地气思路,unfinished)
-2.增加端口扫描模块(unfinished)
+增加端口扫描模块(unfinished)
 ```
 
 ### Changelog
@@ -188,4 +193,6 @@ A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bin
     为abc-def格式(中间有-符号)情况下建表失败
 [+] 在与获取旁站有关的功能上自动尝试获取cdn后真实ip再获取旁站,如果确定有cdn但是没有获取到真实ip则不再获取假的旁
     站
+[+] webshell爆破速度提升1000倍(接地气思路,适用于一句话类型webshell)
 ```
+
