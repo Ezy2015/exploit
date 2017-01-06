@@ -121,6 +121,15 @@ e)web后台说明
 	- cms漏扫:cms漏洞扫描模块
 	- webshell爆破:webshell爆破模块
 	- 管理员登录爆破:管理员登录爆破模块
+
+```
+在设置待爆破页面时要设置为具体管理员登录页面,joomla后台为"http://127.0.0.1/administrator",但是实际上这是错的,
+joomla的后台页面为"http://127.0.0.1/administrator/index.php"或者"http://127.0.0.1/administrator/",如果在设置的
+时候设置成"http://127.0.0.1/administrator"会导致程序判断返回页面的长度出现错误,虽然在浏览器中输入
+"http://127.0.0.1/administrator"会跳转到"http://127.0.0.1/administrator/",但是这对程序在判断是否成功进入管理员
+后台时有影响,这种情况下最好设置待爆破的后台页面为"http://127.0.0.1/administrator/index.php"或者是等效的
+"http://127.0.0.1/administrator/",但是最好是输入最具体的页面"http://127.0.0.1/administrator/index.php"
+```
 	- waf爆破:waf自动爆破模块[3xp10it中没有这个功能]
 	- dbquery:数据库语句执行接口
 	- 扫描结果:查看当前扫描结果
