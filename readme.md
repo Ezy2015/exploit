@@ -130,6 +130,7 @@ joomla的后台页面为"http://127.0.0.1/administrator/index.php"或者"http://
 后台时有影响,这种情况下最好设置待爆破的后台页面为"http://127.0.0.1/administrator/index.php"或者是等效的
 "http://127.0.0.1/administrator/",但是最好是输入最具体的页面"http://127.0.0.1/administrator/index.php"
 ```
+
 	- waf爆破:waf自动爆破模块[3xp10it中没有这个功能]
 	- dbquery:数据库语句执行接口
 	- 扫描结果:查看当前扫描结果
