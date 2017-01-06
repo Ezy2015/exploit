@@ -120,19 +120,11 @@ e)web后台说明
 	- 扫目录:目录扫描模块
 	- cms漏扫:cms漏洞扫描模块
 	- webshell爆破:webshell爆破模块
+	- 管理员登录爆破:管理员登录爆破模块
 	- waf爆破:waf自动爆破模块[3xp10it中没有这个功能]
 	- dbquery:数据库语句执行接口
 	- 扫描结果:查看当前扫描结果
-	- 管理员登录爆破:管理员登录爆破模块
 
-```
-在设置待爆破页面时要设置为具体管理员登录页面,joomla后台为"http://127.0.0.1/administrator",但是实际上这是错的,
-joomla的后台页面为"http://127.0.0.1/administrator/index.php"或者"http://127.0.0.1/administrator/",如果在设置的
-时候设置成"http://127.0.0.1/administrator"会导致程序判断返回页面的长度出现错误,虽然在浏览器中输入
-"http://127.0.0.1/administrator"会跳转到"http://127.0.0.1/administrator/",但是这对程序在判断是否成功进入管理员
-后台时有影响,这种情况下最好设置待爆破的后台页面为"http://127.0.0.1/administrator/index.php",设置成
-"http://127.0.0.1/administrator"是很有可能导致程序误报的,设成"http://127.0.0.1/administrator/"是有风险的
-```
 
 
 ### Detail
@@ -205,5 +197,7 @@ A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bin
 [+] 在与获取旁站有关的功能上自动尝试获取cdn后真实ip再获取旁站,如果确定有cdn但是没有获取到真实ip则不再获取假的旁
     站
 [+] webshell爆破速度提升1000倍(接地气思路,适用于一句话类型webshell)
+[+] 2017-01-06 添加支持如http://127.0.0.1/administrator页面的爆破,实际上http://127.0.0.1/administrator并不是
+    直接的管理员页面,在浏览器中输入http://127.0.0.1/administrator后会跳转到"http://127.0.0.1/administrator/",
+    这才是有效的待爆破的管理员页面
 ```
-
