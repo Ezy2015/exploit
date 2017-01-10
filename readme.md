@@ -1,3 +1,4 @@
+
 ### Disclaimer
 
 ```
@@ -192,6 +193,7 @@ A0:config.ini在python3 3xp10it.py初次运行后会自动生成,用于设置bin
 ### Todo
 
 ```
+1.针对已经扫描到的端口进行自动爆破[eg.21,3306,1433,22,3389]
 ```
 
 ### Changelog
