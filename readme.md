@@ -192,6 +192,10 @@ Q1:单个模块怎么使用?
 A1:单个模块执行有2种方法:
    1)web后台
    2)cd /usr/local/lib/python3.5/dist-packages/tools && ls -al
+
+Q2:为什么需要连接google才能用?
+A2:要保证能直接ping通google证明可以绕过GFW,有些domain不连vpn会无法访问,这样的domain在正常情况下被GFW拦截时会影响
+   代码获取真实ip的效果,代码中强制要求连接vpn
 ```
 
 ### Todo
