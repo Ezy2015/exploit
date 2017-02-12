@@ -13,8 +13,10 @@ xwafTarget.focus();
 return false;
 }
 
-if(xwafTargetValue.substring(0,4)!="http" || xwafTargetValue.length<5){
-alert("请输入sqli地址,在此之前请确保已经用sqlmap跑过该sqli");
+if(xwafTargetValue.split(" ").length<2 || xwafTargetValue.length<5){
+    alert("请输入你的sqlmap语句的参数,在此之前请确保已经用sqlmap跑过该\
+sqli\neg:\n1.-u 'http://www.baidu.com/1.php?id=1'\n2.-u 'http://www.baidu.com/1.php'\
+--data='postdatahere' -p xx -v 3\n3.-r /headerfile -v 4 -p xxx");
 xwafTarget.focus();
 return false;
 }
@@ -55,7 +57,7 @@ xmlhttp.send();
 {% block content %}
 
 <div class="mid" id="myinput">
-	<input type="text" id="INPUT_2" placeholder="burp bypass waf..." name="targetValue"/>
+	<input type="text" id="INPUT_2" placeholder="burp bypass waf...eg:-u 'http://www.baidu.com/1.php?id=1' --batch --level 3" name="targetValue"/>
 </div>
 
 <button id=button1 style="margin:0

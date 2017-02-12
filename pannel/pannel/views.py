@@ -20,9 +20,11 @@ from xdir import single_dirb_scan
 from xcms import single_cms_scan
 from xwebshell import crack_webshell
 from xadmin import crack_admin_login_url
-from xwaf import Program as Xwaf
+#from xwaf import Program as Xwaf
 from exp10it import get_target_table_name_list
 from exp10it import exist_table_in_db
+from exp10it import string2argv
+from urllib.parse import urlparse
 
 db_name = eval(get_key_value_from_config_file(configIniPath, "default", 'db_name'))
 targets_table_name = eval(get_key_value_from_config_file(configIniPath, "default", 'targets_table_name'))
@@ -206,9 +208,49 @@ def xwaf(request):
     if targetValue != None:
         print(targetValue)
     if action == "xwaf":
-        result = Xwaf(targetValue, False)
-        result = result.returnValue
-        if result == "":
+        command="python3 "+ModulePath+"tools/xwaf.py "+targetValue
+        print(command)
+        os.system(command)
+        #下面找出目标域名,以便找到运行结果内容
+        url=""
+        tmp=string2argv(targetValue)
+        index=0
+        for each in tmp:
+            if each=="-u":
+                url=tmp[index+1]
+                break
+            index+=1
+        if url=="":
+            if "-r" in tmp:
+                tmpIndex=0
+                tmpList=tmp
+                for each in tmpList:
+                    if each=="-r":
+                        readFile=tmpList[tmpIndex+1]
+                        break
+                    tmpIndex+=1
+                with open(readFile,"r+") as f:
+                    allLines=f.readlines()
+                findHost=0
+                for eachLine in allLines:
+                    if re.search("host:",eachLine,re.I):
+                        hostValue=re.search("host:\s?([\S]+)",eachLine,re.I).group(1)
+                        url="http"+"://"+hostValue
+                        findHost=1
+                        break
+                if findHost==0:
+                    print("Although you provide a header file,but I can not find host value")
+                    sys.exit(1)
+            else:
+                print("Sorry,I can not find a url:(")
+                sys.exit(1)
+        #上面找出目标域名,以便找到运行结果内容
+
+        log_file = "/root/.sqlmap/output/" + urlparse(url).hostname + "/log"
+        log_config_file = log_file[:-3] + "config_file.ini"
+        succeedCmd=get_key_value_from_config_file(log_config_file, 'default', 'bypassed_command')
+        result=succeedCmd
+        if result == "[]":
             result = "Sorry,waf not bypassed."
         return HttpResponse(result.replace("\n", "<br>"))
     else:
