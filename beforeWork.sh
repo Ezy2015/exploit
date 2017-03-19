@@ -1,2 +1,2 @@
-apt-get install python-requests
-apt-get install python-dnspython
+echo y | apt-get install python-requests
+echo y | apt-get install python-dnspython
